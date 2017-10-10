@@ -5,7 +5,7 @@ from .models import User, Zip, Access, Plans, Payment, User_Rentals, Rentals, Co
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('user_id', 'user_name', 'user_email', 'zip_id', 'user_country', 'user_phone', 'created_at', 'updated_at')
+        fields = ('user_id', 'user_name', 'user_email', 'zip_id', 'user_country', 'user_phone', 'plan_id', 'created_at', 'updated_at')
 
 
 class ZipSerializer(serializers.ModelSerializer):
@@ -23,7 +23,7 @@ class AccessSerializer(serializers.ModelSerializer):
 class PlansSerializer(serializers.ModelSerializer):
     class Meta:
         model = Plans
-        fields = ('plan_id', 'plan_desc', 'plan_price', 'user_id')
+        fields = ('plan_id', 'plan_desc', 'plan_price')
 
 
 class PaymentSerializer(serializers.ModelSerializer):

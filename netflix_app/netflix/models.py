@@ -12,6 +12,7 @@ class User(models.Model):
     zip_id = models.ForeignKey('Zip', on_delete = models.CASCADE)
     user_country = models.CharField(max_length=255)
     user_phone = models.IntegerField()
+    plan_id = models.ForeignKey('Plans', on_delete = models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     # def get_breed(self):
@@ -51,7 +52,6 @@ class Plans(models.Model):
     plan_id = models.IntegerField(primary_key = True)
     plan_desc = models.CharField(max_length=255)
     plan_price = models.IntegerField()
-    user_id = models.ForeignKey('User', on_delete = models.CASCADE)
 
 
 class Payment(models.Model):
@@ -121,7 +121,7 @@ class Genre(models.Model):
 
 class Ratings(models.Model):
     """
-    User Model
+    Ratings Model
     Defines the attributes of ratings
     """
     ratings_id = models.IntegerField(primary_key = True)
